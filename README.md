@@ -3,7 +3,7 @@
 > Malicious shortcut generator for collecting NTLM hashes from insecure file shares.
 
 This is a fixed fork of [dievus/lnkbomb](https://github.com/dievus/lnkbomb), which was archived in November 2024. This fork addresses several bugs in the original that prevented the tool from working correctly against subdirectories on Windows shares.
-
+![Banner Preview](images/example1.png)
 ---
 
 ## Changes From Original
